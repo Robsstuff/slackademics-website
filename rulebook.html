@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Patrick+Hand&family=Patrick+Hand+SC&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#fafaf6;font-family:'Patrick Hand',system-ui,sans-serif;color:#181818;-webkit-font-smoothing:antialiased;}
+  img{display:block;max-width:100%;}
+  ::selection{background:#9ad6f0;}
+  .rb-card{background:#fffdf5;border:3px solid #181818;border-radius:20px 13px 22px 15px/15px 22px 13px 20px;box-shadow:6px 7px 0 rgba(24,24,24,.14);padding:34px 36px;margin:0 0 40px;}
+  .rb-card h2{font-family:'Gochi Hand',cursive;font-size:clamp(28px,4.2vw,40px);margin:0 0 18px;}
+  .rb-card h3{font-family:'Patrick Hand';font-size:24px;margin:22px 0 8px;}
+  .rb-card p{font-size:19px;line-height:1.55;margin:0 0 14px;color:#242424;}
+  .rb-card ul,.rb-card ol{font-size:19px;line-height:1.55;margin:0 0 14px;padding-left:26px;color:#242424;}
+  .rb-card li{margin-bottom:8px;}
+  .rb-card ul ul{margin:8px 0 14px;}
+  .rb-thumb{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+  .rb-thumb img{width:56px;border:2px solid #181818;border-radius:5px;flex:0 0 auto;}
+  .rb-caption{font-size:16px;color:#5a4f3a;margin:20px 0 8px;}
+  .rb-strip{display:flex;flex-wrap:wrap;align-items:flex-start;gap:14px;margin:0 0 20px;}
+  .rb-strip figure{margin:0;text-align:center;width:64px;flex:0 0 auto;}
+  .rb-strip img{width:100%;border:2px solid #181818;border-radius:6px;}
+  .rb-strip figcaption{font-size:12.5px;color:#5a4f3a;margin-top:5px;line-height:1.2;}
+  .rb-pair{display:flex;align-items:center;gap:6px;}
+  .rb-pair span{font-family:'Gochi Hand',cursive;font-size:22px;color:#b9a98a;}
+  .rb-spock{display:inline-block;font-family:'Patrick Hand SC';font-size:15px;letter-spacing:1px;text-transform:uppercase;background:#d8b8ec;padding:.1em .5em;border-radius:6px 11px 5px 10px/10px 5px 11px 6px;}
+</style>
+</helmet>
+<div style="position:relative;min-height:100vh;background-image:repeating-linear-gradient(transparent 0 28px, #c4d8ea 28px 29px);background-position:0 8px;overflow:hidden;">
+
+  <div style="position:absolute;top:0;bottom:0;left:max(18px,calc(50% - 480px));width:2px;background:rgba(214,138,128,0.45);pointer-events:none;"></div>
+
+  <!-- ===== NAV ===== -->
+  <nav style="position:sticky;top:0;z-index:50;backdrop-filter:blur(2px);background:rgba(250,250,246,0.82);border-bottom:2.5px solid #181818;">
+    <div style="max-width:1180px;margin:0 auto;padding:12px 26px;display:flex;align-items:center;justify-content:space-between;gap:18px;">
+      <a href="index.html#top" style="display:flex;align-items:center;gap:11px;text-decoration:none;">
+        <span style="display:inline-flex;width:38px;height:38px;align-items:center;justify-content:center;background:#8fd0ee;border:2.5px solid #181818;border-radius:13px 7px 14px 8px/8px 14px 7px 13px;transform:rotate(-5deg);font-size:24px;">✎</span>
+        <span style="font-family:'Gochi Hand',cursive;font-size:30px;letter-spacing:.5px;color:#181818;">Slackademics</span>
+      </a>
+      <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap;">
+        <a href="index.html#play" style="font-size:21px;text-decoration:none;color:#181818;">How to Play</a>
+        <a href="deck.html" style="font-size:21px;text-decoration:none;color:#181818;">The Cards</a>
+        <a href="characters.html" style="font-size:21px;text-decoration:none;color:#181818;">Characters</a>
+        <a href="rulebook.html" style="font-size:21px;text-decoration:none;color:#181818;border-bottom:2.5px solid #181818;">Rulebook</a>
+        <a href="design.html" style="font-size:21px;text-decoration:none;color:#181818;">Design</a>
+        <a href="campaign.html" style="font-size:21px;text-decoration:none;color:#181818;">Campaign</a>
+        <a href="index.html#preorder" style="font-family:'Patrick Hand';font-size:20px;text-decoration:none;color:#181818;padding:.28em 1em;background:#8fd0ee;border:2.5px solid #181818;border-radius:14px 9px 15px 10px/10px 15px 9px 14px;box-shadow:2.5px 3px 0 #181818;transform:rotate(-1.2deg);white-space:nowrap;" style-hover="transform:rotate(-1.2deg) translateY(-2px);box-shadow:3px 5px 0 #181818;">ORDER NOW</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HEADER ===== -->
+  <header style="max-width:900px;margin:0 auto;padding:56px 26px 10px;text-align:center;">
+    <span style="display:inline-block;font-family:'Patrick Hand SC';font-size:19px;letter-spacing:1.6px;text-transform:uppercase;background:#f6b8d0;padding:.2em .8em;border-radius:10px 16px 9px 15px/15px 9px 16px 10px;transform:rotate(-1deg);">The official rules</span>
+    <h1 style="font-family:'Gochi Hand',cursive;font-size:clamp(40px,7vw,72px);margin:16px 0 6px;">Slackademics Rulebook</h1>
+    <p style="font-size:22px;color:#5a4f3a;margin:0 0 6px;">Higher Education with Lower Effort.</p>
+    <p style="font-size:19px;color:#7a6f58;margin:0 0 22px;">3-8 Players &nbsp;•&nbsp; 25 Minutes &nbsp;•&nbsp; www.slackademics.store</p>
+    <a href="downloads/Slackademics Rulebook.docx" download style="display:inline-flex;align-items:center;gap:.5em;font-family:'Patrick Hand';font-size:22px;text-decoration:none;color:#181818;padding:.5em 1.2em;background:#ffd84d;border:3px solid #181818;border-radius:14px 9px 16px 11px/11px 16px 9px 14px;box-shadow:4px 5px 0 #181818;transform:rotate(-1deg);" style-hover="transform:rotate(-1deg) translateY(-3px);box-shadow:4px 8px 0 #181818;">⬇ Download the Rulebook (Word doc)</a>
+  </header>
+
+  <!-- ===== BODY ===== -->
+  <main style="max-width:900px;margin:0 auto;padding:44px 26px 20px;">
+
+    <div class="rb-card">
+      <h2>Overview</h2>
+      <p>Slackademics is a social-deduction party game where players must “work together” to complete group projects at university. The game is played over six semesters (rounds), each representing one group project. In every semester, players must secretly split their effort between the group project and attending legendary university parties. The SLACKER who spent the most effort partying and the least effort contributing to the group projects is the winner...provided they don't get caught and expelled.</p>
+    </div>
+
+    <div class="rb-card">
+      <h2>Components</h2>
+      <div class="rb-thumb"><img src="assets/deck/effort-6.jpg" alt="Effort card"><div>96 <strong>Effort cards</strong>, which are 8 hands made up of 6 pairs:
+        <ul style="margin-top:8px;">
+          <li>Regular Effort cards: eight copies each of the values 0, 1, 2, 3, 5, 6, 7 and 8.</li>
+          <li>Effort 4 Special Character Cards: sixteen special effort-4 cards (two each of eight characters). Every character has a unique ability.</li>
+          <li>Copy (×2) cards: sixteen cards that double another card.</li>
+        </ul>
+      </div></div>
+      <div class="rb-thumb"><img src="assets/deck/lead-eureka.jpg" alt="Leadership card"><p style="margin:0;">13 <strong>Leadership cards</strong>: each is worth +3 points when earned as Extra Credit.</p></div>
+      <div class="rb-thumb"><img src="assets/deck/project-engineering.jpg" alt="Project card"><p style="margin:0;">12 <strong>Project cards</strong>: each shows a group project with the effort required for different player counts. They have a Group Fail on the back.</p></div>
+      <div class="rb-thumb"><img src="assets/deck/status-voting-card.jpg" alt="Voting card"><p style="margin:0;">9 <strong>Voting cards</strong>: one per player, used for the SLACKER Vote.</p></div>
+      <div class="rb-thumb"><img src="assets/deck/status-project-leader.jpg" alt="Status card"><p style="margin:0;"><strong>Status cards</strong>: 1 Project Leader card and 9 Successful Slack Off cards, each with an Individual Fail on the back.</p></div>
+    </div>
+
+    <div class="rb-card">
+      <h2>Setup</h2>
+      <ul>
+        <li>Deal each player a starting hand of twelve cards: one each of 0, 1, 2, 3, 5, 6, 7 and 8, two effort-4 Character cards, and two ×2 Copy cards. Each player blindly takes their two effort-4 cards as a matching pair, so both are the same Character with the same ability (for example, two Nerds or two Athletes) and other players do not know what they have.</li>
+        <li>Shuffle the Leadership cards. Place one face up on the table, next to the rest of the deck which stays face down.</li>
+        <li>Shuffle the Project cards and choose six at random; place them face up on the table in a deck. Order them by course-code number, lowest at the top of the deck to highest at the bottom.</li>
+        <li>Give each player one Voting card. It stays on the table in front of them, not in their hand.</li>
+        <li>Randomly choose a first Project Leader and give them the Project Leader card.</li>
+      </ul>
+      <p class="rb-caption"><strong>A starting hand:</strong> one each of 0-8 (except 4), a matching Character pair, and two Copy cards.</p>
+      <div class="rb-strip">
+        <figure><img src="assets/deck/effort-0.jpg" alt="Effort 0"><figcaption>0</figcaption></figure>
+        <figure><img src="assets/deck/effort-1.jpg" alt="Effort 1"><figcaption>1</figcaption></figure>
+        <figure><img src="assets/deck/effort-2.jpg" alt="Effort 2"><figcaption>2</figcaption></figure>
+        <figure><img src="assets/deck/effort-3.jpg" alt="Effort 3"><figcaption>3</figcaption></figure>
+        <figure><img src="assets/deck/effort-5.jpg" alt="Effort 5"><figcaption>5</figcaption></figure>
+        <figure><img src="assets/deck/effort-6.jpg" alt="Effort 6"><figcaption>6</figcaption></figure>
+        <figure><img src="assets/deck/effort-7.jpg" alt="Effort 7"><figcaption>7</figcaption></figure>
+        <figure><img src="assets/deck/effort-8.jpg" alt="Effort 8"><figcaption>8</figcaption></figure>
+        <figure><img src="assets/deck/char-nerd.jpg" alt="Character pair"><figcaption>+ a matching Character pair</figcaption></figure>
+        <figure><img src="assets/deck/effort-copy.jpg" alt="Copy cards"><figcaption>+ two Copy cards</figcaption></figure>
+      </div>
+      <p class="rb-caption"><strong>Six Project cards</strong> are drawn at random and lined up lowest to highest by course code:</p>
+      <div class="rb-strip">
+        <figure><img src="assets/deck/project-phil101.jpg" alt="Philosophy 101"><figcaption>Philosophy 101</figcaption></figure>
+        <figure><img src="assets/deck/project-soc102.jpg" alt="Sociology 102"><figcaption>Sociology 102</figcaption></figure>
+        <figure><img src="assets/deck/project-stat103.jpg" alt="Statistics 103"><figcaption>Statistics 103</figcaption></figure>
+        <figure><img src="assets/deck/project-music204.jpg" alt="Music 204"><figcaption>Music 204</figcaption></figure>
+        <figure><img src="assets/deck/project-engineering.jpg" alt="Engineering 305"><figcaption>Engineering 305</figcaption></figure>
+        <figure><img src="assets/deck/project-chem401.jpg" alt="Chemistry 401"><figcaption>Chemistry 401</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="rb-card">
+      <h2>How the Game Works</h2>
+      <h3>Playing a Semester</h3>
+      <ul>
+        <li>The Project Leader picks the top Project card from the deck, reads out its name and announces the effort required to pass for the current number of players. "Our group project is Philosophy 101 and we need 25 effort to pass this project."</li>
+        <li>Any player with an activated character ability from a previous semester (see Special Character Cards) reads out its ability so all players understand the special rules for the round. "I am The Influencer and I get to cast an additional vote and break voting ties this semester."</li>
+        <li>The Project Leader gives a rousing speech, or makes a loose plan, to motivate the group to contribute effort. "Ok Slackers, we can't fail again so I need everybody to play at least five effort or more to this project."</li>
+        <li>At the same time, every player secretly chooses a legal pair of cards. Each player plays one card of the pair toward the project, face down in front of the Project Leader (the Project Pile), and the other toward partying, face down in front of themselves (their Party Pile). The Party Pile becomes the players' victory points at the end of the game.</li>
+      </ul>
+      <p><em>A legal pair is two cards that sum to 8, or two Copy cards: 0+8, 1+7, 2+6, 3+5, 4+4, or ×2 Copy + ×2 Copy. Matching colours and symbols in the top-left corner show which cards pair together.</em></p>
+      <div class="rb-strip">
+        <div class="rb-pair"><figure><img src="assets/deck/effort-0.jpg" alt="Effort 0"><figcaption>0</figcaption></figure><span>+</span><figure><img src="assets/deck/effort-8.jpg" alt="Effort 8"><figcaption>8</figcaption></figure></div>
+        <div class="rb-pair"><figure><img src="assets/deck/effort-1.jpg" alt="Effort 1"><figcaption>1</figcaption></figure><span>+</span><figure><img src="assets/deck/effort-7.jpg" alt="Effort 7"><figcaption>7</figcaption></figure></div>
+        <div class="rb-pair"><figure><img src="assets/deck/effort-2.jpg" alt="Effort 2"><figcaption>2</figcaption></figure><span>+</span><figure><img src="assets/deck/effort-6.jpg" alt="Effort 6"><figcaption>6</figcaption></figure></div>
+        <div class="rb-pair"><figure><img src="assets/deck/effort-3.jpg" alt="Effort 3"><figcaption>3</figcaption></figure><span>+</span><figure><img src="assets/deck/effort-5.jpg" alt="Effort 5"><figcaption>5</figcaption></figure></div>
+        <div class="rb-pair"><figure><img src="assets/deck/char-nerd.jpg" alt="Character card"><figcaption>Character</figcaption></figure><span>+</span><figure><img src="assets/deck/char-nerd.jpg" alt="Matching character card"><figcaption>same Character</figcaption></figure></div>
+        <div class="rb-pair"><figure><img src="assets/deck/effort-copy.jpg" alt="Copy card"><figcaption>Copy</figcaption></figure><span>+</span><figure><img src="assets/deck/effort-copy.jpg" alt="Copy card"><figcaption>Copy</figcaption></figure></div>
+      </div>
+      <ul>
+        <li>The Project Leader collects the Project Pile and shuffles it.</li>
+        <li>The Project Leader flips the Project cards over one at a time for dramatic effect, giving a running total, possibly making snarky comments along the way. "4/25 Not bad, 8/25 at least we're consistent, 9/25 ok whoever played that 1 needs to be kicked out of the group!"</li>
+        <li>The Project Leader leaves the final Project card face down. Other players may be able to work out its value, but may not tell the Project Leader.</li>
+        <li>If a special effort-4 card is played, it counts as four effort; its ability is not activated yet. Character abilities activate for the next semester. (See Special Character Cards.)</li>
+      </ul>
+
+      <h3>The ×2 Copy Card</h3>
+      <ul>
+        <li>A Copy card doubles the value of the next card revealed.</li>
+        <li>If a Copy is the last card revealed, it doubles the first card instead.</li>
+        <li>Two Copies in a row combine, so the next card is multiplied by four.</li>
+        <li>If every card in a pile is a Copy there is nothing to copy, so the pile is worth 0.</li>
+        <li>In your Party Pile a Copy works the same way: it doubles the next card played. This will be the card placed on top of it. If played in the last round, it will be on top of the pile, so it doubles the card on the bottom of the pile.</li>
+      </ul>
+      <p>When comparing Party cards in a SLACKER Vote or for snitching:</p>
+      <ul>
+        <li>A person who played a Copy cannot be the SLACKER or the <span class="rb-spock">SPOCK</span>.</li>
+        <li>If a snitch reveals a Copy card, the snitch fails. If the player snitching has a Copy card, the snitch always succeeds unless the revealed card is also a Copy.</li>
+      </ul>
+
+      <h3>The Day of the Deadline</h3>
+      <p>Before flipping the final Project card, the Project Leader chooses one of two options:</p>
+      <ul>
+        <li><strong>Earn Extra Credit.</strong> Do not use a Leadership Skill and simply flip the final Project card. If the project passes, the Extra Credit bonus is awarded (see below).</li>
+        <li><strong>Use a Leadership Skill.</strong> If the Project Leader feels the project won't pass, they can use a Leadership Skill to add last-minute effort, picking up either the face-up Leadership Skill or one drawn blindly from the deck. The Project Leader then flips the final Project card, adding its effort to the running total and applying the bonus effort gained from the Leadership Skill.</li>
+      </ul>
+      <p><strong>Resolve pass or fail:</strong> if the total effort for the project (including any Leadership Skill bonus) is greater than or equal to the effort required, the project passes; otherwise it fails.</p>
+
+      <h3>Pass or Fail</h3>
+      <p><strong>If the Project Passes</strong>: Passed by earning Extra Credit: the Project Leader takes the face-up Leadership Skill and places it next to their Party Pile (+3 points). Passed by using a Leadership Skill: no Extra Credit is awarded. Either way, place the passed Project card at the top of the table, visible to all.</p>
+      <div class="rb-thumb"><img src="assets/deck/status-group-fail.jpg" alt="Group Fail card"><p style="margin:0;"><strong>If the Project Fails</strong>: flip the Project card to its fail side and place it visible to all. This is a Group Fail and counts as one fail for all players.</p></div>
+
+      <h3>Group Evaluation: The SLACKER Vote</h3>
+      <p>The group holds a SLACKER Vote, provided there are at least two different numbered effort cards in the Project Pile. The consequences differ depending on whether the project passed or failed. Players vote for who they think is the SLACKER, and try to avoid voting for the <span class="rb-spock">SPOCK</span>.</p>
+      <p>The <strong>SLACKER</strong> is the person who played the highest card to their Party Pile (and therefore the lowest to the project). There can be multiple SLACKERS sharing the highest value, but only one SLACKER can be caught per semester.</p>
+      <p>The <span class="rb-spock">SPOCK</span> is the person who played the <em>lowest</em> card to their Party Pile (and therefore the highest to the project). There can't be multiple SPOCKs in a semester: if two players tie for lowest Party card, there is no SPOCK that round.</p>
+      <p>The Project Leader finds the lowest effort card in the Project Pile that isn't a Copy and subtracts it from 8 to get the SLACKER's Party value, then asks: "The SLACKER spent X effort partying. Who is the SLACKER?"</p>
+      <div class="rb-thumb"><img src="assets/deck/status-slack-off-success.jpg" alt="Successful Slack Off card"><p style="margin:0;"><strong>If the Project Passed</strong>: players vote one at a time, starting with the Project Leader and going clockwise, placing their Voting card in front of another player (the Project Leader breaks any tie). The player with the most votes reveals their top Party card:</p></div>
+      <ul>
+        <li>Highest Party card played → they're the SLACKER, caught, and must discard it.</li>
+        <li>Lowest Party card played → they're the <span class="rb-spock">SPOCK</span>: take two Extra Credit and flip the card back face down (no discard).</li>
+        <li>Neither highest nor lowest, or a Copy → no consequence, flip back face down.</li>
+      </ul>
+      <p>If the SLACKER wasn't caught, they (or all tied SLACKERS) may choose to reveal themselves to claim the Successful Slack Off card (+5 points), or stay hidden.</p>
+      <div class="rb-thumb"><img src="assets/deck/status-individual-fail.jpg" alt="Individual Fail card"><p style="margin:0;"><strong>If the Project Failed</strong>: players vote one at a time, starting with the Project Leader and going clockwise, placing their Voting card in front of another player and explaining why they're voting for them (the Project Leader breaks any tie). The player with the most votes reveals their top Party card, which is discarded at end-of-semester clean up unless they're the SPOCK. If they're the SLACKER, they also take an Individual Fail (the back of the Successful Slack Off card).</p></div>
+      <p>Unless they're the SLACKER or SPOCK, that player can now choose to snitch: name another player and reveal their Party card. If it's strictly higher (not equal, not a Copy), that player also discards theirs at clean up, and gets the option to snitch again in turn. The chain continues until a snitch fails, someone declines, or the SLACKER or SPOCK is found. A discovered SLACKER takes an Individual Fail on top of discarding. A discovered SPOCK does <em>not</em> discard: they take two Extra Credit instead (and being found this way doesn't count as the SLACKER being caught). Every other player discards their top Party card face down at clean up. The Successful Slack Off card can't be claimed when the project fails.</p>
+      <p>A player's effort-4 card carries a unique character and special ability. It's played and counted like a regular effort card. During clean-up, the player takes it back from the Project Pile into the activated position (face up next to their Party Pile); its ability is now active for the next semester. Be mindful that a character card played in the final semester will not activate its ability, as there is no next semester. Special characters add complexity: it's worth skipping their abilities the first time you play, or for a more casual game.</p>
+
+      <h3>End of the Semester Clean Up</h3>
+      <ul>
+        <li>Discard any activated Character cards next to a player's Party Pile; abilities last one semester only.</li>
+        <li>Players take any Special Character cards they played from the Project Pile and place them next to their Party Pile, now in the activated position.</li>
+        <li>Discard all other effort cards from the Project Pile; they're never redealt.</li>
+        <li>If the project failed, the player with the most votes and anyone successfully snitched on discard their top Party card (or, if the SPOCK was revealed, every other player does instead).</li>
+        <li>If the face-up Leadership Skill was used or taken, turn a new one face up. If the Leadership deck is empty, write down each player's Extra Credit points and rebuild the deck.</li>
+        <li>The current Project Leader chooses the next one (not passed around the circle); they can't repick someone who has already led unless everyone has led an equal number of times.</li>
+        <li>Return Voting cards to players.</li>
+        <li>Any player with four fails is expelled.</li>
+      </ul>
+      <p>Continue until all six semesters are complete, only two (or one) players remain, or every player has been expelled.</p>
+    </div>
+
+    <div class="rb-card">
+      <h2>Expulsions</h2>
+      <p>Any player who reaches four fails (group and individual combined) is expelled at the end of the semester. They finish their actions for the current semester, including voting and snitching, but an expelled player can no longer play or win. All their victory points count for nothing.</p>
+      <p>After an expulsion, use the lower effort-required values printed on the Project cards for the new, smaller player count.</p>
+      <p>If expulsions leave only two players, the game ends at the end of that semester: both survivors place half of their remaining effort cards into their Party Pile, then tally scores. If only one player remains, they win outright.</p>
+      <p>If every remaining player is expelled in the same semester, a special victory condition applies, called <strong>Appeal to the Dean</strong>: the player with the most Extra Credit can appeal their expulsion and wins the game. If Extra Credit is tied, whoever played the highest Project card in that final semester wins.</p>
+    </div>
+
+    <div class="rb-card">
+      <h2>End of the Game &amp; Scoring</h2>
+      <p>Once all six semesters are finished, each player who hasn't been expelled tallies their score:</p>
+      <ul>
+        <li>Add the values of every effort card in your Party Pile.</li>
+        <li>Apply the ×2 Copy card in your Party Pile: it doubles the next card played on top of it (or, if it was played last, the card on the bottom of the pile). Keep track of play order so the bonus applies correctly.</li>
+        <li>Add +3 for each Extra Credit card and +5 for each Successful Slack Off card.</li>
+      </ul>
+      <p>The player with the highest total wins. They must use their superior partying skills to plan the next board games night.</p>
+    </div>
+
+    <div class="rb-card">
+      <h2>Variant: Kicked Out of the Group</h2>
+      <p>The five-player game can also be played with a player-expulsion variant. It plays the same except there's no four-fail expulsion limit. Instead, a player is expelled every time the group fails, specifically whoever received the most votes. There's no snitching in this variant, but that player does get a last-minute appeal: they may name one player and reveal their top Party card. If that player is the SLACKER, they're expelled instead; if not, the original player is expelled. The game continues until all six semesters are complete, or only two players remain.</p>
+      <p style="color:#7a6f58;font-size:16px;"><em>This variant wasn't in the latest rules text we synced from, carried over unchanged for now. Worth confirming it still applies as-is alongside the SPOCK role.</em></p>
+    </div>
+
+    <div class="rb-card" id="characters">
+      <h2>Character Cards: Special Abilities</h2>
+      <sc-for list="{{ characters }}" as="c" hint-placeholder-count="8">
+        <div class="rb-thumb">
+          <img src="{{ c.img }}" alt="{{ c.name }} card">
+          <p style="margin:0;"><strong>{{ c.name }}</strong>: {{ c.ability }}</p>
+        </div>
+      </sc-for>
+    </div>
+
+    <div class="rb-card" id="leadership">
+      <h2>Leadership Cards</h2>
+      <p>On the Day of the Deadline the Project Leader may use one Leadership Skill to add a last-minute bonus to the project's effort total. Every Leadership card also offers the same alternative: instead of using its skill, earn Extra Credit: if the project passes, keep the card for +3 points.</p>
+      <sc-for list="{{ leadership }}" as="l" hint-placeholder-count="13">
+        <div class="rb-thumb">
+          <img src="{{ l.img }}" alt="{{ l.name }} card">
+          <p style="margin:0;"><strong>{{ l.name }}</strong>: {{ l.ability }}</p>
+        </div>
+      </sc-for>
+    </div>
+
+    <div class="rb-card">
+      <h2>Worked Example: One Semester</h2>
+      <p>Three friends are playing: Alex, Bay and Cass. Alex is the Project Leader. (With more players, more cards go to the project and the effort needed to pass is higher.)</p>
+      <p><strong>1. The Project Leader reveals the project.</strong> Alex takes the top Project card, reads out its name, and announces the effort needed to pass. With 3 players this project needs 9 effort.</p>
+      <p><strong>2. Everyone secretly plays a legal pair.</strong> At the same time each player splits a legal pair (two cards that add to 8): one card face down to the Project Pile, the other face down onto their own Party Pile. Alex plays 3 to the project and 5 to their Party Pile. Bay plays their Character pair, so both of their cards are The Nerd: 4 to the project, 4 to their Party Pile. Cass plays 0 to the project and keeps an 8 in their Party Pile, the highest Party card anyone can hold this semester.</p>
+      <p><strong>3. Reveal and add up.</strong> Alex collects the Project Pile, shuffles it, then flips the cards one at a time, leaving the last card face down. The first two are a 0 and a 4, so the running total is 4.</p>
+      <p><strong>4. The Day of the Deadline.</strong> Now Alex must choose: earn Extra Credit, or use a Leadership Skill. Alex knows something the others don't: the face-down card must be their own 3, since the 0 and 4 are already showing. That's only 7 effort total, short of the 9 needed, so Alex uses the face-up Leadership Skill: <strong>Eureka</strong>, plus 4 effort. The final card is flipped and counted first: it's Alex's 3, making 0 + 4 + 3 = 7, then Eureka adds +4, for a total of 11.</p>
+      <p><strong>5. Pass or fail.</strong> 11 is at least 9, so the project PASSES. Because a Leadership Skill was used, no Extra Credit is awarded this semester.</p>
+      <p><strong>6. Group Evaluation: The SLACKER Vote.</strong> Alex looks at the Project Pile, finds the lowest effort card that isn't a Copy (Cass's 0) and subtracts it from 8: "The SLACKER spent 8 effort partying. Who is the SLACKER?" Players vote one at a time, starting with Alex and going clockwise. Bay receives the most votes and reveals their top Party card: a 4, the <em>lowest</em> Party card played this round, not the highest. Bay isn't the SLACKER at all. Bay is the <span class="rb-spock">SPOCK</span>! Bay takes two Extra Credit and flips the card back face down, no discard. Cass, quietly holding the real highest Party card (the 8), was never voted for and stays hidden as the uncaught SLACKER, though Cass could choose to reveal themselves now and claim the Successful Slack Off card (+5) instead of staying hidden.</p>
+      <p><strong>7. End of the Semester.</strong> Bay takes their Nerd back from the Project Pile and places it face up in front of them, active from next semester, and keeps the two Extra Credit earned as the SPOCK. Cass's Party Pile is untouched, since the SLACKER was never caught. The rest of the Project Pile is discarded, a new Leadership Skill replaces Eureka face up, Voting cards are returned, and Alex chooses who leads the next project.</p>
+      <p style="color:#7a6f58;font-size:17px;"><em>The downloadable Word doc above illustrates this exact example with the actual cards played by each of the three players.</em></p>
+    </div>
+
+    <div class="rb-card">
+      <h2>Play Testers</h2>
+      <p>Jessie, Marty, Kat, Colby, Danuts, Bianca, Eddie, Matt, Kaleb, Jonathan, Josh, Zoe, Jarrod, Dan, Kristen, Arlo, Luca, Nick, Jimmy, Declan, Josh, Jake, Matt, Newcastle Board Game Designers.</p>
+      <p style="margin-top:14px;">Design and Artwork: Rob Bukey</p>
+    </div>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="border-top:2.5px solid #181818;background:rgba(250,250,246,0.7);margin-top:30px;">
+    <div style="max-width:1180px;margin:0 auto;padding:34px 26px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:11px;">
+        <span style="display:inline-flex;width:36px;height:36px;align-items:center;justify-content:center;background:#8fd0ee;border:2.5px solid #181818;border-radius:13px 7px 14px 8px/8px 14px 7px 13px;transform:rotate(-5deg);font-size:22px;">✎</span>
+        <span style="font-family:'Gochi Hand',cursive;font-size:26px;">Slackademics</span>
+      </div>
+      <p style="font-size:19px;margin:0;color:#5a4f3a;">A lo-fi card game about higher education · © 2026</p>
+      <div style="display:flex;gap:18px;font-size:20px;flex-wrap:wrap;">
+        <a href="index.html#preorder" style="text-decoration:none;color:#181818;border-bottom:2px solid #8fd0ee;">Buy Now</a>
+        <a href="rulebook.html" style="text-decoration:none;color:#181818;border-bottom:2px solid #f6b8d0;">Rulebook</a>
+        <a href="characters.html" style="text-decoration:none;color:#181818;border-bottom:2px solid #ffd84d;">Characters</a>
+        <a href="deck.html" style="text-decoration:none;color:#181818;border-bottom:2px solid #bfe3b0;">The Deck</a>
+        <a href="design.html" style="text-decoration:none;color:#181818;border-bottom:2px solid #d8b8ec;">Design</a>
+        <a href="campaign.html" style="text-decoration:none;color:#181818;border-bottom:2px solid #ffd84d;">Campaign</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1000,&quot;height&quot;:3200}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      characters: [
+        { img: 'assets/deck/char-nerd.jpg', name: 'The Nerd', ability: 'Take two Extra Credit from the deck if the project passes.' },
+        { img: 'assets/deck/char-athlete.jpg', name: 'The Athlete', ability: 'Other players may not vote for The Athlete this semester. Clarification: They still may be snitched on.' },
+        { img: 'assets/deck/char-cheerleader.jpg', name: 'The Cheerleader', ability: 'Before the last Project card is revealed, The Cheerleader takes the face-up Leadership Skill as Extra Credit and replaces it from the deck.' },
+        { img: 'assets/deck/char-frat-bro.jpg', name: 'The Frat Bro', ability: 'Remove an Individual Fail from any player, including themselves, and take Extra Credit. Clarification: Extra Credit is taken from the face-down deck. This occurs at the start of the round when the card is read aloud.' },
+        { img: 'assets/deck/char-influencer.jpg', name: 'The Influencer', ability: 'The Influencer will cast an additional vote and break any voting ties this semester. Clarification: Use the additional Voting card provided.' },
+        { img: 'assets/deck/char-activist.jpg', name: 'The Activist', ability: 'If the project fails, the player with the most votes will take an Individual Fail, even if they are not the SLACKER. Clarification: Snitching still occurs if the project has failed.' },
+        { img: 'assets/deck/char-intl-student.jpg', name: 'The International Student', ability: "If the SLACKER is caught this semester, The International Student places the SLACKER's discarded Party card on their own Party Pile. Clarification: This does not apply if the International Student is the SLACKER." },
+        { img: 'assets/deck/char-mature-age-student.jpg', name: 'The Mature Age Student', ability: 'Pick a player to play their cards face up for the semester. Clarification: This includes both their Project and Party cards. They still can be voted for and snitched on.' }
+      ],
+      leadership: [
+        { img: 'assets/deck/lead-all-nighter.jpg', name: 'All-Nighter', ability: 'Double the value of the final face-down effort card.' },
+        { img: 'assets/deck/lead-force-attendance.jpg', name: 'Force Attendance', ability: 'Any No Show (0 effort) cards in the project now count as an effort value of 4. This does not affect Copy cards.' },
+        { img: 'assets/deck/lead-desperation.jpg', name: 'Desperation', ability: "Plus 4 effort for each Group Fail." },
+        { img: 'assets/deck/lead-diligence.jpg', name: 'Diligence', ability: 'Copy cards double the highest-value card in the project.' },
+        { img: 'assets/deck/lead-diversity.jpg', name: 'Diversity', ability: 'Plus 1 effort for each different card in the Project Pile.' },
+        { img: 'assets/deck/lead-eureka.jpg', name: 'Eureka', ability: 'Plus 4 effort, and plus 4 more if this card was chosen while face down.' },
+        { img: 'assets/deck/lead-even-the-odds.jpg', name: 'Even the Odds', ability: 'Plus 1 effort for every odd number in the project.' },
+        { img: 'assets/deck/lead-experience.jpg', name: 'Experience', ability: 'Plus 1 effort for each Extra Credit earned by the group.' },
+        { img: 'assets/deck/lead-plagiarise.jpg', name: 'Plagiarise', ability: 'The first ×2 Copy card played becomes ×3.' },
+        { img: 'assets/deck/lead-realign-priorities.jpg', name: 'Realign Priorities', ability: "Pick another player: they reveal their top Party card and swap it with the Project card they played (the legal-pair partner of that Party card)." },
+        { img: 'assets/deck/lead-procrastinate.jpg', name: 'Procrastinate', ability: 'Subtract 5 from the effort required, but increase the effort required for the next project by 5.' },
+        { img: 'assets/deck/lead-round-of-coffee.jpg', name: 'Round of Coffee', ability: 'Double the value of the two lowest effort cards.' },
+        { img: 'assets/deck/lead-synergy.jpg', name: 'Synergy', ability: 'Plus 3 effort for each pair of cards that sum to 8.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
